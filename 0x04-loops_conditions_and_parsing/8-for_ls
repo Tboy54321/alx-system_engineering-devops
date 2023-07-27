@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# A script that displays the content of the pwd
+
+x=$(ls)
+for i in $x;
+do
+	echo "$i" | cut -d '-' -f2
+done
