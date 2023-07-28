@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash script that diplays contents in a file
+
+ps -aux | grep bash
