@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash Script that displays active ipv4 addresses
+
+ifconfig 2>/dev/null | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"
