@@ -2,7 +2,7 @@
 # The file (School) has permissions 0744, belonging to the user and group
 
 file { '/tmp/school':
-  ensure  => file,
+  ensure  => present,
   mode    => '0074',
   owner   => 'www-data',
   group   => 'www-data',
