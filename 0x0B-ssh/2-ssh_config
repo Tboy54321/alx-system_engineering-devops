@@ -1,0 +1,9 @@
+# CUstom configuration file to adjust to our needs
+# The configuration file uses the private key school
+Host *
+    endEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentals no
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
