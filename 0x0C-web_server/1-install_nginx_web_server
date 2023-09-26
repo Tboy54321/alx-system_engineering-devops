@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash script that configures a new Ubuntu machine
+# To install Nginx
+# To also create an html file
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+
+service nginx restart
