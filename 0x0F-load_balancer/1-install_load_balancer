@@ -6,14 +6,14 @@ apt-get -y update
 apt-get -y install haproxy=1.6.\*
 
 echo '
-frontend Innocent.Sax
+frontend tboy.tech
         bind 0:80
         default_backend web_servers
 
 backend web_servers
         balance roundrobin
-        server 64820-web-01 54.173.165.199
-        server 64820-web-02 54.82.120.194
+        server 303660-web-01 18.233.64.67
+        server 303660-web-02 52.4.93.199
 ' >> /etc/haproxy/haproxy.cfg
 
 service haproxy restart
