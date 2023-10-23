@@ -5,6 +5,7 @@ import sys
 
 
 if __name__ == '__main__':
+
     id = sys.argv[1]
     base_url = 'https://jsonplaceholder.typicode.com/users'
 
@@ -14,17 +15,10 @@ if __name__ == '__main__':
     employee_url = requests.get(employee_url_link)
     task_url = requests.get(task_url_link)
 
-    employee_name = employee_url.json()['name']
+    employee_name = employee_url.json()['username']
     all_tasks = task_url.json()
 
-    done_task = 0
-    tasks = []
-
-    for task in all_tasks:
-        if task.get('completed'):
-            tasks.append(task)
-            done_task += 1
-    print("Employee {} is done with tasks({}/{}):"
-          .format(employee_name, done_task, len(all_tasks)))
-    for task in tasks:
-        print("\t {}".format(task['title']))
+    with open('{}.csv'.format(id), 'w') as file:
+        for task in all_tasks:
+            file.write('"{}","{}","{}","{}"\n'.format(id,
+                       employee_name, task['completed'], task['title']))
